@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 
 class Button extends Component {
   static defaultProps = {
-    color: '#6D15A1'
+    color: '#6D15A1',
+    textColor: '#fff'
   };
 
   static propTypes = {
@@ -13,13 +14,17 @@ class Button extends Component {
   };
 
   render () {
-    const { color, value, ...restProps } = this.props;
+    const {style, color, textColor, value, ...restProps} = this.props;
+
+    const styles = {
+      backgroundColor: color,
+      borderColor: color,
+      color: textColor,
+      ...style
+    };
 
     return (
-      <AntdButton style={{
-        backgroundColor: color,
-        borderColor: color
-      }}  {...restProps}>
+      <AntdButton style={styles}  {...restProps}>
         {value}
       </AntdButton>
     );
