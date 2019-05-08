@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Typography } from 'antd';
 import styled from 'styled-components';
 
 import { H1 } from '../styles/core';
 import { FeaturedArtist } from '../styles/home';
 
 import Button from '../components/core/Button';
+
+const {Title, Text} = Typography;
 
 class FeaturedFeed extends Component {
   constructor (props) {
@@ -38,9 +40,16 @@ class FeaturedFeed extends Component {
               `;
 
               return (
-                <Col key={artist.id} style={{textAlign: 'center'}} className="gutter-row" span={12}>
-                  <Featured>
-                    <H1>{artist.moniker}</H1>
+                <Col key={artist.id} style={{marginTop: 8, marginBottom: 8}} className="gutter-row" span={8}>
+                  <BackgroundImage>
+                    <Content>
+                      <Title level={2}>
+                        <Text strong style={{color: Theme.white}}>
+                          {artist.moniker}
+                        </Text>
+                      </Title>
+                    </Content>
+
                     <Row>
                       <Col span={12} offset={6}>
 
