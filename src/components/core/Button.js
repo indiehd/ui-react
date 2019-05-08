@@ -3,10 +3,12 @@ import { Button as AntdButton } from 'antd';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import Theme from '../../styles/theme';
+
 class Button extends Component {
   static defaultProps = {
-    color: '#6D15A1',
-    textColor: '#fff'
+    color: Theme.primary,
+    textColor: Theme.white,
   };
 
   static propTypes = {
@@ -18,9 +20,15 @@ class Button extends Component {
     const {color, textColor, children, ...restProps} = this.props;
 
     const StyledButton = styled(AntdButton)`
-      color: ${textColor};
-      background-color: ${color};
-      border-color: ${color};
+      color: ${textColor} !important;
+      background-color: ${color} !important;
+      border-color: ${color} !important;
+      
+      &:hover {
+        color: ${Theme.primary} !important;
+        background-color: ${Theme.white} !important;
+        border-color: ${Theme.primary} !important;
+      }
     `;
 
     return (
