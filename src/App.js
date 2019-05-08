@@ -10,6 +10,7 @@ import Home from './views/Home'
 
 const {Header, Content, Footer} = Layout;
 
+/* todo: Create styled components for the below */
 const Styles = {
   Logo: {
     width: 150,
@@ -28,8 +29,6 @@ const Styles = {
     padding: '25px 190px',
     minHeight: 500
   },
-
-  Footer: {textAlign: 'center'},
 };
 
 function App () {
@@ -47,7 +46,7 @@ function App () {
             <Home/>
           </div>
         </Content>
-        <Footer style={Styles.Footer}>
+        <Footer style={{textAlign: 'center'}}>
           indieHD LLC © 2008 - 2019
         </Footer>
       </Layout>

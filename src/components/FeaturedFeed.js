@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'antd';
+import styled from 'styled-components';
+
+import { H1 } from '../styles/core';
+import { FeaturedArtist } from '../styles/home';
 
 import Button from '../components/core/Button';
 
@@ -20,48 +24,41 @@ class FeaturedFeed extends Component {
   }
 
   render () {
+    const artists = this.state.featuredArtists;
 
     return (
       <div>
         <Row gutter={16}>
           {
-            this.state.featuredArtists.map(artist => {
+            artists.map(artist => {
               const num = Math.floor(Math.random() * Math.floor(9)) + 1;
 
-              const StyledFeatured = {
-                height: 400,
-                width: '100%',
-                marginTop: 8,
-                marginBottom: 8,
-                padding: 25,
-                backgroundImage: `linear-gradient(rgba(230, 100, 101, 0.5), rgba(145, 152, 229, 0.5)), url(${require(`../assets/images/featured/${num}.jpg`)})`,
-                backgroundPosition: `center center`,
-              };
+              const Featured = styled(FeaturedArtist)`
+                background-image: linear-gradient(rgba(230, 100, 101, 0.5), rgba(145, 152, 229, 0.5)), url(${require(`../assets/images/featured/${num}.jpg`)});
+              `;
 
               return (
                 <Col key={artist.id} style={{textAlign: 'center'}} className="gutter-row" span={12}>
-                  <div style={StyledFeatured}>
-                    <h1 style={{color: 'white', fontSize: 48}}>{artist.moniker}</h1>
+                  <Featured>
+                    <H1>{artist.moniker}</H1>
                     <Row>
                       <Col span={12} offset={6}>
 
                         <Button
                           color="#30ADED"
-                          value={`View ${artist.albums} Albums`}
                           style={{marginRight: 10}}
                           shape="round"
                           size="large"
-                        />
+                        >{`${artist.albums} Albums`}</Button>
 
                         <Button
-                          value={`View ${artist.songs} Songs`}
                           shape="round"
                           size="large"
-                        />
+                        >{`${artist.songs} Songs`}</Button>
 
                       </Col>
                     </Row>
-                  </div>
+                  </Featured>
                 </Col>
               );
             })

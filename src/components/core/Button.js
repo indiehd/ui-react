@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button as AntdButton } from 'antd';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 class Button extends Component {
   static defaultProps = {
@@ -9,24 +10,23 @@ class Button extends Component {
   };
 
   static propTypes = {
-    value: PropTypes.string.isRequired,
-    color: PropTypes.string
+    color: PropTypes.string,
+    textColor: PropTypes.string
   };
 
   render () {
-    const {style, color, textColor, value, ...restProps} = this.props;
+    const {color, textColor, children, ...restProps} = this.props;
 
-    const styles = {
-      backgroundColor: color,
-      borderColor: color,
-      color: textColor,
-      ...style
-    };
+    const StyledButton = styled(AntdButton)`
+      color: ${textColor};
+      background-color: ${color};
+      border-color: ${color};
+    `;
 
     return (
-      <AntdButton style={styles}  {...restProps}>
-        {value}
-      </AntdButton>
+      <StyledButton {...restProps}>
+        {children}
+      </StyledButton>
     );
   }
 }

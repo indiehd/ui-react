@@ -1,38 +1,32 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'antd';
 
-import imgBanner from '../assets/images/banner.jpg';
+import { H1, H3 } from '../styles/core';
 
-import Featured from '../components/FeaturedFeed';
+import Banner from '../components/Banner';
+import FeaturedFeed from '../components/FeaturedFeed';
 
-const Styles = {
-  GutterRow: {
-    textAlign: 'center'
-  },
-
-  Banner: {
-    height: 400,
-    width: '100%',
-    backgroundImage: `linear-gradient(rgba(230, 100, 101, 0.5), rgba(145, 152, 229, 0.5)), url(${imgBanner})`,
-    backgroundPosition: `center center`
-  },
-
-};
-
+/*
+todo: Create components
+Title component
+Subtitle component
+*/
 class Home extends Component {
 
   render () {
     return (
       <div>
         <Row gutter={16}>
-          <Col style={Styles.GutterRow} className="gutter-row" span={24}>
-            <div style={Styles.Banner}>
-              <h1>Test</h1>
-            </div>
+          <Col style={{textAlign: 'center'}} className="gutter-row" span={24}>
+            <Banner>
+              <H1 style={{color: '#060606', fontWeight: 'bold'}}>The IndieHD Project</H1>
+              <H3 style={{color: '#1c1c1c', fontWeight: 'bold'}}>A simple, do-it-yourself platform for selling their
+                music to fans, digitally.</H3>
+            </Banner>
           </Col>
         </Row>
 
-        <Featured />
+        <FeaturedFeed/>
       </div>
     );
   }
