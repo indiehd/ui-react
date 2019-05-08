@@ -10,20 +10,14 @@ import Button from '../components/core/Button';
 const {Title, Text} = Typography;
 
 class FeaturedFeed extends Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      featuredArtists: [
-        /* Temporary data to play with */
-        {id: 1, moniker: 'Bens Band Of fo0lz', albums: 25, songs: 104, url: 'bens_band_of_fo0lz'},
-        {id: 2, moniker: 'Mikes Band', albums: 7, songs: 53, url: 'mikes_band'},
-        {id: 3, moniker: 'Veks Crazied Eye Candies', albums: 5, songs: 26, url: 'veks_crazied_eye_candies'},
-        {id: 4, moniker: 'Johns Band Of fo0lz', albums: 3, songs: 16, url: 'johns_band_of_fo0lz'},
-        {id: 5, moniker: 'John Doe\'s Basement Boys', albums: 15, songs: 56, url: 'john_does_basement_boys'},
-        {id: 6, moniker: 'K0rn', albums: 35, songs: 326, url: 'k0rn'},
-      ]
-    };
-  }
+  state = {
+    featuredArtists: [
+      /* Temporary data to play with */
+      {id: 1, moniker: 'Bens Band Of fo0lz', albums: 25, songs: 104, url: 'bens_band_of_fo0lz'},
+      {id: 2, moniker: 'Mikes Band', albums: 7, songs: 53, url: 'mikes_band'},
+      {id: 3, moniker: 'Veks Crazied Eye Candies', albums: 5, songs: 26, url: 'veks_crazied_eye_candies'},
+    ]
+  };
 
   render () {
     const artists = this.state.featuredArtists;
