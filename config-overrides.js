@@ -1,4 +1,5 @@
 const {override, fixBabelImports, addLessLoader} = require('customize-cra');
+const Theme = require('./src/styles/theme');
 
 module.exports = override(
   fixBabelImports('import', {
@@ -9,22 +10,23 @@ module.exports = override(
   addLessLoader({
     javascriptEnabled: true,
     modifyVars: {
-      '@primary-color': '#6D15A1',
-      '@link-color': '#30ADED',
-      '@info-color': '#d9d9d9',
-      '@success-color': '#B6F537',
-      '@warning-color': '#faad14',
-      '@heading-color': 'rgba(0, 0, 0, .85)',
-      '@text-color': 'rgba(0, 0, 0, .65)',
-      '@text-color-secondary': 'rgba(0, 0, 0, .45)',
-      '@disabled-color': 'rgba(0, 0, 0, .25)',
-      '@border-color-base': '#d9d9d9',
+      '@primary-color': Theme.primary,
+      '@link-color': Theme.link,
+      '@info-color': Theme.info,
+      '@success-color': Theme.success,
+      '@warning-color': Theme.warning,
+      '@error-color': Theme.error,
+      '@heading-color': Theme.heading,
+      '@text-color': Theme.text,
+      '@text-color-secondary': Theme.textSecondary,
+      '@disabled-color': Theme.disabled,
+      '@border-color-base': Theme.borderBase,
 
       // Layout
-      '@layout-header-background': '#F0F2F5',
+      '@layout-header-background': Theme.layoutHeaderBg,
 
       // Menu
-      '@menu-bg': '#F0F2F5'
-    },
+      '@menu-bg': Theme.menuBg,
+    }
   }),
 );

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import color from '../../styles/colors';
+import Theme from '../theme';
 
 export const FeaturedArtist = styled.div`
   height: 400px;
@@ -7,6 +7,6 @@ export const FeaturedArtist = styled.div`
   margin-top: 8px;
   margin-bottom: 8px;
   padding: 25px;
-  background-image: linear-gradient(${color.primaryGradient}, ${color.secondaryGradient}), url(${require('../../assets/images/featured/1.jpg')});
+  background-image: linear-gradient(${Theme.gradientPrimary}, ${Theme.gradientSecondary}), url(${require('../../assets/images/featured/1.jpg')});
   background-position: center center;
 `;
