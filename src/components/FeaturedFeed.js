@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Row, Col, Typography } from 'antd';
 import styled from 'styled-components';
 
-import { H1 } from '../styles/core';
-import { FeaturedArtist } from '../styles/home';
+import Theme from '../styles/theme';
+import { Background, Content } from '../styles/featuredArtists';
 
 import Button from '../components/core/Button';
 
@@ -29,8 +29,8 @@ class FeaturedFeed extends Component {
             artists.map(artist => {
               const num = Math.floor(Math.random() * Math.floor(9)) + 1;
 
-              const Featured = styled(FeaturedArtist)`
-                background-image: linear-gradient(rgba(230, 100, 101, 0.5), rgba(145, 152, 229, 0.5)), url(${require(`../assets/images/featured/${num}.jpg`)});
+              const BackgroundImage = styled(Background)`
+                background-image: url(${require(`../assets/images/featured/${num}.jpg`)});
               `;
 
               return (
@@ -45,23 +45,25 @@ class FeaturedFeed extends Component {
                     </Content>
 
                     <Row>
-                      <Col span={12} offset={6}>
+                      <Col span={24} offset={6}>
 
                         <Button
-                          color="#30ADED"
+                          color={Theme.accentPrimary}
                           style={{marginRight: 10}}
                           shape="round"
                           size="large"
-                        >{`${artist.albums} Albums`}</Button>
+                        >{artist.albums + ' Albums'}</Button>
 
                         <Button
+                          color={Theme.link}
                           shape="round"
                           size="large"
-                        >{`${artist.songs} Songs`}</Button>
+                        >{artist.songs + ' Songs'}</Button>
 
                       </Col>
                     </Row>
-                  </Featured>
+                  </BackgroundImage>
+
                 </Col>
               );
             })
