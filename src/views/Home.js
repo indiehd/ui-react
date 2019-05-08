@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'antd';
-
-import { H1, H3 } from '../styles/core';
+import { Row, Col, Typography } from 'antd';
+import Theme from '../styles/theme';
 
 import Banner from '../components/Banner';
 import FeaturedFeed from '../components/FeaturedFeed';
+import Button from '../components/core/Button';
 
-/*
-todo: Create components
-Title component
-Subtitle component
-*/
+const {Title, Text} = Typography;
+
 class Home extends Component {
 
   render () {
@@ -19,9 +16,34 @@ class Home extends Component {
         <Row gutter={16}>
           <Col style={{textAlign: 'center'}} className="gutter-row" span={24}>
             <Banner>
-              <H1 style={{color: '#060606', fontWeight: 'bold'}}>The IndieHD Project</H1>
-              <H3 style={{color: '#1c1c1c', fontWeight: 'bold'}}>A simple, do-it-yourself platform for selling their
-                music to fans, digitally.</H3>
+              <Title>
+                <Text strong style={{color: Theme.white}}>The IndieHD Project</Text>
+              </Title>
+
+              <Title level={2}>
+                <Text strong style={{color: Theme.white}}>
+                  A simple, do-it-yourself platform for selling your music to fans, digitally.
+                </Text>
+              </Title>
+
+              <Row>
+                <Col span={12} offset={6}>
+
+                  <Button
+                    color={Theme.accentPrimary}
+                    style={{marginRight: 10}}
+                    shape="round"
+                    size="large"
+                  >Start Selling</Button>
+
+                  <Button
+                    color={Theme.link}
+                    shape="round"
+                    size="large"
+                  >Learn More</Button>
+
+                </Col>
+              </Row>
             </Banner>
           </Col>
         </Row>

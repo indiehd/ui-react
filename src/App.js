@@ -1,24 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './assets/styles/App.css';
 import { Layout } from 'antd';
 
-import logo from './assets/images/logo.svg';
+import logoImg from './assets/images/logo.svg';
+
+import { Logo } from './styles/app';
 import Menu from './components/MainMenu';
 import Crumbs from './components/Crumbs';
 
-import Home from './views/Home'
+import Home from './views/Home';
+import About from './views/About';
 
 const {Header, Content, Footer} = Layout;
 
 /* todo: Create styled components for the below */
 const Styles = {
-  Logo: {
-    width: 150,
-    height: 31,
-    margin: '16px 24px 16px 0',
-    float: 'left',
-  },
-
   Header: {
     paddingLeft: 190,
     paddingRight: 190
@@ -35,20 +32,23 @@ function App () {
   return (
     <div className="App">
       <Layout className="layout">
-        <Header style={Styles.Header}>
-          <img style={Styles.Logo} src={logo} alt={'logo'}/>
-          <Menu/>
-        </Header>
-        <Content>
-          <div style={Styles.Content}>
-            <Crumbs/>
-            {/*  todo: Dynamic page view ? */}
-            <Home/>
-          </div>
-        </Content>
-        <Footer style={{textAlign: 'center'}}>
-          indieHD LLC © 2008 - 2019
-        </Footer>
+        <Router>
+          <Header style={Styles.Header}>
+            <Logo src={logoImg} alt={'logo'}/>
+            <Menu/>
+          </Header>
+          <Content>
+            <div style={Styles.Content}>
+              <Crumbs/>
+
+              <Route exact path="/" component={Home}/>
+              <Route path="/about" component={About}/>
+            </div>
+          </Content>
+          <Footer style={{textAlign: 'center'}}>
+            indieHD LLC © 2008 - 2019
+          </Footer>
+        </Router>
       </Layout>
     </div>
   );

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
 
 const SubMenu = Menu.SubMenu;
@@ -17,7 +18,9 @@ class MainMenu extends Component {
           defaultSelectedKeys={['1']}
           style={Styles.Menu}
         >
-          <Menu.Item key="1">Home</Menu.Item>
+          <Menu.Item key="1">
+            <Link to="/">Home</Link>
+          </Menu.Item>
           <SubMenu title={<span className="submenu-title-wrapper">Music <Icon type="down"/></span>}>
             <MenuItemGroup title="Browse">
               <Menu.Item key="music:1">Most Popular</Menu.Item>
@@ -36,6 +39,9 @@ class MainMenu extends Component {
               <Menu.Item key="music:10">Rock</Menu.Item>
             </MenuItemGroup>
           </SubMenu>
+          <Menu.Item key="2">
+            <Link to="/about">About</Link>
+          </Menu.Item>
           <Menu.Item key="3">Help</Menu.Item>
         </Menu>
       </div>
