@@ -32,6 +32,6 @@ module.exports = {
   menuBg: '#EDEAF5',
 
   /* Gradients */
-  gradientPrimary: 'rgba(230, 100, 101, 0.5)',
-  gradientSecondary: 'rgba(145, 152, 229, 0.5)',
+  gradientPrimary: 'rgba(0,0,0,0.8)',
+  gradientSecondary: 'rgba(255,10,210,0.4)',
 };
