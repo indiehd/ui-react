@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './assets/styles/App.css';
 import { Layout } from 'antd';
-
+import './styles/_App.css';
 import logoImg from './assets/images/logo.svg';
 
 import { Logo } from './styles/app';
