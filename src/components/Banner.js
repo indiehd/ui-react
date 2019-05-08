@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Banner as StyledBanner } from '../styles/home';
+import { Banner as StyledBanner } from '../styles/banner';
 
 class Banner extends Component {
   render () {
