@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Button as AntdButton } from 'antd';
+import { Button as AntdButton } from 'antd/lib/index';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Theme from '../../styles/theme';
+import Theme from '../styles/theme';
 
 class Button extends Component {
   static defaultProps = {

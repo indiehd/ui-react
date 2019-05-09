@@ -5,10 +5,6 @@ import { Menu, Icon } from 'antd';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
-const Styles = {
-  Menu: {lineHeight: '64px'},
-};
-
 class MainMenu extends Component {
   render () {
     return (
@@ -16,7 +12,7 @@ class MainMenu extends Component {
         <Menu
           mode="horizontal"
           defaultSelectedKeys={['1']}
-          style={Styles.Menu}
+          style={{lineHeight: '64px'}}
         >
           <Menu.Item key="1">
             <Link to="/">Home</Link>

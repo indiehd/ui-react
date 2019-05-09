@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Row, Col, Typography } from 'antd';
 import Theme from '../styles/theme';
 
-import Banner from '../components/Banner';
-import FeaturedFeed from '../components/FeaturedFeed';
-import Button from '../components/core/Button';
-import Subscribe from '../components/Subscribe';
+import Banner from '../components/home/Banner';
+import Featured from '../components/home/Featured';
+import Button from '../components/Button';
+import Subscribe from '../components/home/Subscribe';
 
 const {Title, Text} = Typography;
 
@@ -51,7 +51,7 @@ class Home extends Component {
 
         <Subscribe style={{marginTop: 8}}/>
 
-        <FeaturedFeed/>
+        <Featured/>
       </div>
     );
   }
