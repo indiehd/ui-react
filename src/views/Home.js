@@ -5,6 +5,7 @@ import Theme from '../styles/theme';
 import Banner from '../components/Banner';
 import FeaturedFeed from '../components/FeaturedFeed';
 import Button from '../components/core/Button';
+import Subscribe from '../components/Subscribe';
 
 const {Title, Text} = Typography;
 
@@ -47,6 +48,8 @@ class Home extends Component {
             </Banner>
           </Col>
         </Row>
+
+        <Subscribe style={{marginTop: 8}}/>
 
         <FeaturedFeed/>
       </div>
