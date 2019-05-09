@@ -11,7 +11,7 @@ const {Title, Text} = Typography;
 
 class FeaturedFeed extends Component {
   state = {
-    featuredArtists: [
+    featured: [
       /* Temporary data to play with */
       {id: 1, moniker: 'Bens Band Of fo0lz', albums: 25, songs: 104, url: 'bens_band_of_fo0lz'},
       {id: 2, moniker: 'Mikes Band', albums: 7, songs: 53, url: 'mikes_band'},
@@ -20,7 +20,7 @@ class FeaturedFeed extends Component {
   };
 
   render () {
-    const artists = this.state.featuredArtists;
+    const artists = this.state.featured;
 
     return (
       <div>
