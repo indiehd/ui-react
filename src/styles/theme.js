@@ -29,7 +29,6 @@ module.exports = {
   disabled: '#575757',
   borderBase: '#d9d9d9',
   layoutHeaderBg: '#F0F2F5',
-  menuBg: '#6C16A1',
 
   /* Gradients */
   gradientPrimary: 'rgba(0,0,0,0.8)',
