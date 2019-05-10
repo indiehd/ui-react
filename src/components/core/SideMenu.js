@@ -14,62 +14,71 @@ const {Sider} = Layout;
 
 class SideMenu extends Component {
   static defaultProps = {
-    width: 200,
+    width: 300,
+    color: Theme.primary,
+    textColor: Theme.white,
+    hoverColor: Theme.white,
+    hoverTextColor: Theme.accentPrimary
   };
 
   static propTypes = {
     width: PropTypes.number,
+    color: PropTypes.string,
+    textColor: PropTypes.string,
+    hoverColor: PropTypes.string,
+    hoverTextColor: PropTypes.string
   };
 
   render () {
-    const {width, ...restProps} = this.props;
+    const {width, color, textColor, hoverColor, hoverTextColor, ...restProps} = this.props;
 
     const StyledMenu = styled(Menu)`
       line-height: 64px; 
       border-right: 0;
       height: 100%;
-   
+      background: ${color};
+      
       .ant-menu-item-group-title {
         color: ${Theme.light};
       }
       
       .ant-menu-item-selected {
-        background-color: ${Theme.layoutHeaderBg} !important; // todo: why ??
+        background-color: ${hoverColor} !important; // todo: why ??
       }
       
       .ant-menu-item, 
       .ant-menu-submenu-title, 
       .ant-menu-item > a {
-        color: ${Theme.white};
+        color: ${textColor};
       }
       
       .ant-menu-item-selected::after {
-        border: 1px solid ${Theme.accentPrimary};
+        border: 1px solid ${hoverTextColor};
       }
       
       .ant-menu-item:hover, 
       .ant-menu-submenu-title:hover {
-        color: ${Theme.accentPrimary};
-        background: ${Theme.layoutHeaderBg};
+        color: ${hoverTextColor};
+        background: ${hoverColor};
         
         a {
-          color: ${Theme.accentPrimary};
+          color: ${hoverTextColor};
         }
       }
       
       .ant-menu-submenu > .ant-menu {
-        background-color: ${lighten(0.05, Theme.primary)};
+        background-color: ${lighten(0.05, color)};
       }
       
       .ant-menu-submenu-selected, 
       .ant-menu-item-selected > a {
-        color: ${Theme.accentPrimary};
+        color: ${hoverTextColor};
       }
      
     `;
 
     return (
-      <div style={{background: Theme.primary}}>
+      <div style={{background: color}}>
         <Sider width={width}>
           <StyledMenu
             mode="inline"
