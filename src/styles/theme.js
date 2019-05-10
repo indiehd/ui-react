@@ -17,7 +17,7 @@ module.exports = {
   dark: '#060028',
   light: '#CCCCCC',
   text: '#131313',
-  textSecondary: '#323232',
+  textSecondary: '#6d6d6d',
   primary: '#6C16A1',
   secondary: '#AB29A1',
   link: '#30ADED',
@@ -29,7 +29,7 @@ module.exports = {
   disabled: '#575757',
   borderBase: '#d9d9d9',
   layoutHeaderBg: '#F0F2F5',
-  menuBg: '#F0F2F5',
+  menuBg: '#6C16A1',
 
   /* Gradients */
   gradientPrimary: 'rgba(0,0,0,0.8)',
