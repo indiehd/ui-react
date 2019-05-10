@@ -12,23 +12,22 @@ const Background = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: grayscale(50%);
 `;
 
 const Content = styled.div`
   background-color: rgba(0,0,0,0.7);
-    color: white;
-    font-weight: bold;
-    position: relative;
-    width: 100%;
-    height: 80px;
-    min-height: 80px;
-    max-height: 80px;
-    top: 50px;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    padding: 20px;
-    text-align: center;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  width: 100%;
+  height: 80px;
+  min-height: 80px;
+  max-height: 80px;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 20px;
+  text-align: center;
 `;
 
 class Featured extends Component {
@@ -70,14 +69,13 @@ class Featured extends Component {
                       <Col span={24} offset={6}>
 
                         <Button
-                          color={Theme.accentPrimary}
                           style={{marginRight: 10}}
                           shape="round"
                           size="large"
                         >{artist.albums + ' Albums'}</Button>
 
                         <Button
-                          color={Theme.link}
+                          color={Theme.secondary}
                           shape="round"
                           size="large"
                         >{artist.songs + ' Songs'}</Button>

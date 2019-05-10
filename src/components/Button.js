@@ -25,9 +25,9 @@ class Button extends Component {
       border-color: ${color} !important;
       
       &:hover {
-        color: ${Theme.primary} !important;
-        background-color: ${Theme.white} !important;
-        border-color: ${Theme.primary} !important;
+        color: ${Theme.white} !important;
+        background-color: ${Theme.accentPrimary} !important;
+        border-color: ${Theme.white} !important;
       }
     `;
 

@@ -10,7 +10,6 @@ const StyledBanner = styled.div`
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: grayscale(50%);
 `;
 
 class Banner extends Component {

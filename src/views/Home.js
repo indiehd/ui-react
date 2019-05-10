@@ -31,7 +31,6 @@ class Home extends Component {
                 <Col span={12} offset={6}>
 
                   <Button
-                    color={Theme.accentPrimary}
                     style={{marginRight: 10}}
                     shape="round"
                     size="large"
