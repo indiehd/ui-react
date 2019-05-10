@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Col, Row, Input, Typography } from 'antd';
-import Theme from '../styles/theme';
+import { Col, Row, Input, Typography } from 'antd/lib/index';
+import Theme from '../../styles/theme';
 
 const {Title, Text} = Typography;
 

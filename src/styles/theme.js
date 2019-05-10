@@ -28,8 +28,8 @@ module.exports = {
   heading: '#101010',
   disabled: '#575757',
   borderBase: '#d9d9d9',
-  layoutHeaderBg: '#EDEAF5',
-  menuBg: '#EDEAF5',
+  layoutHeaderBg: '#F0F2F5',
+  menuBg: '#F0F2F5',
 
   /* Gradients */
   gradientPrimary: 'rgba(0,0,0,0.8)',
