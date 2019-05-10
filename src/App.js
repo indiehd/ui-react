@@ -4,9 +4,10 @@ import { Layout } from 'antd';
 
 import styled from 'styled-components';
 import './styles/_App.css';
+import Theme from './styles/theme';
 
 import logoImg from './assets/images/logo.svg';
-import Menu from './components/core/MainMenu';
+import SideMenu from './components/core/SideMenu';
 import Crumbs from './components/core/Crumbs';
 
 import Home from './views/Home';
@@ -17,33 +18,40 @@ const {Header, Content, Footer} = Layout;
 const Logo = styled.img`
   width: 150px;
   height: 31px;
-  margin: 16px 24px 16px 0;
+  margin-top: 16px;
   float: left;
 `;
 
 const ContentWrapper = styled(Content)`
   background: #fff;
-  padding: 25px 190px;
+  padding: 25px;
   min-height: 500px;
 `;
 
 function App () {
   return (
     <div className="App">
-      <Layout className="layout">
+      <Layout>
         <Router>
-          <Header style={{paddingLeft: 190, paddingRight: 190}}>
+          <Header>
             <Logo src={logoImg} alt="logo"/>
-            <Menu/>
           </Header>
-          <Content>
-            <ContentWrapper>
-              <Crumbs/>
 
-              <Route exact path="/" component={Home}/>
-              <Route path="/about" component={About}/>
-            </ContentWrapper>
-          </Content>
+          <Layout>
+            <SideMenu width={250}/>
+
+            <Layout style={{background: Theme.white}}>
+              <Content>
+                <ContentWrapper>
+                  <Crumbs/>
+
+                  <Route exact path="/" component={Home}/>
+                  <Route path="/about" component={About}/>
+                </ContentWrapper>
+              </Content>
+            </Layout>
+          </Layout>
+
           <Footer style={{textAlign: 'center'}}>
             indieHD LLC © 2008 - 2019
           </Footer>
